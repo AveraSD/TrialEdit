@@ -34,7 +34,10 @@ if (storage == "db") {
   docker <- config::get("docker")
   
   if (docker == "yes") {
-    db_url <<- "host.docker.internal:27017,127.0.0.1:27017" 
+  #  db_url <<- "host.docker.internal:27017,127.0.0.1:27017" 
+    
+    #connecting with service name 
+    db_url <<- "mongodb://mongodba:27017/aci"
   }
   
   if (docker == "no") {
