@@ -175,8 +175,11 @@ editDbData <- function() {
        # write out the file to /data/trials
        outjson <- paste0(here(trialspath), paste0(tr2 %>% unnest(c(info, query)) %>% select(NCT) %>% as.character(), ".full.ndjson"))
        writeLines(tr2 %>% toJSON(pretty = T), outjson)
-       
-       
+       #define db       
+        db <- mongolite::mongo(collection = "ClinicalTrials",
+              db = "aci",
+              url = db_url)
+	       
        #remove the selected clinical trial        
      db$remove(query=paste0('{"info.NCT": "',jsonselected,'" }'),just_one = TRUE)
 
