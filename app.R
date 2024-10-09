@@ -61,8 +61,11 @@ ui <- dashboardPage(
         # Show a plot of the generated distribution
         dashboardBody(tags$head(tags$style(HTML('
         /* logo */
+        # .skin-blue .main-header .logo {
+        #                       background-color: #505050;
+        #                       }
         .skin-blue .main-header .logo {
-                              background-color: #505050;
+                              background-color: #007852;  #changed from 505050 
                               }
 
         /* logo when hovered */
@@ -72,7 +75,7 @@ ui <- dashboardPage(
 
         /* navbar (rest of the header) */
         .skin-blue .main-header .navbar {
-                              background-color: #505050;
+                              background-color: #007852;  #changed from 505050 to 007852
                               }        
 
         /* main sidebar */
@@ -103,8 +106,9 @@ ui <- dashboardPage(
                               '))),
                       
                       tags$style(HTML("
-    .tabbable > .nav > li > a {background-color: #D3D3D3 ;  color:black; width: 300PX;} 
-                                       .tabbable > .nav > li[class=active] > a {background-color: #505050; color:white} ")),
+    .tabbable > .nav > li > a {background-color: #007852 ;  color:black; width: 300PX;} #changed background from #505050 to #007852
+                                       .tabbable > .nav > li[class=active] > a {background-color: #007852; color:white} ")),  #changed background from #505050 to #007852
+                      
                       box(
                         width = 12, background = "black",
                         column(6,
